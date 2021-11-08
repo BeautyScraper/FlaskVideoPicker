@@ -10,6 +10,10 @@ import pandas as pd
 
 # inputDir = r'D:\paradise\stuff\Images\walls'
 
+delPath = Path(r'D:\paradise\stuff\Essence\FS\yummyClips\deletable')
+delPathfn = delPath.name + '_into@move.txt'
+
+
 def dir_path(string):
     if os.path.isdir(string):
         return string
@@ -42,10 +46,11 @@ with open(cnffile,'r+') as fp:
         line = x.strip()
         cdir.append(line)
 mastermovertablefn = Path(args.inputConfig).stem + '.csv'
-csvdata = [[str(hash(x)), x] for x in cdir]
+csvdata = [[Path(x).name+'_into.txt', x] for x in cdir] + [[delPathfn,str(delPath)]]
 df = pd.DataFrame(csvdata,columns=['filename', 'Path'])
 if not Path(mastermovertablefn).is_file():
-    df.to_csv(mastermovertablefn)
+    Path(mastermovertablefn).unlink()
+df.to_csv(mastermovertablefn)
 # with open(cnffile,'r+') as fp:
     # inputDir = random.choice(fp.readlines()).strip()
 inputDirP = Path(inputDir)
@@ -87,6 +92,8 @@ def noteDownFilename():
         
         # shutil.copy(dstfp, outfilepath        
     # print(request.args['category1']).
+    with open(delPathfn,'a+') as fp:
+        fp.write(str(dstfp) + '\n')
     return redirect(url_for('main'))
 
 def getSourceFilePath(filename):

@@ -2,45 +2,62 @@
 <html lang="en">
 <head>
 	<style>
-	img {
+	img,video {
 	  max-width: 100%;
 	  height: auto;
 	}
 	label,input[type=checkbox]
-{
-  /* Double-sized Checkboxes */
-  -ms-transform: scale(2); /* IE */
-  -moz-transform: scale(2); /* FF */
-  -webkit-transform: scale(2); /* Safari and Chrome */
-  -o-transform: scale(2); /* Opera */
-  margin-top: 10px;
-}
+	{
+	  /* Double-sized Checkboxes */
+	  -ms-transform: scale(2); /* IE */
+	  -moz-transform: scale(2); /* FF */
+	  -webkit-transform: scale(2); /* Safari and Chrome */
+	  -o-transform: scale(2); /* Opera */
+	   font-size: 15px;
+	   margin-top: 10px;
+	}
 	</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-	<form action="/noteFilePaths">
-	<button type="submit">
-    <img src="test.jpg" >
-    </button>
+	<form action=/noteFilePaths>
 	
-   <input type="hidden" id="custId" name="imgfilename" value="test.jpg">
-   
-        <input type="checkbox" id="item" name="category0" value="Considerable">
-		<label for="item">Considerable</label><br>
-    
-        <input type="checkbox" id="item" name="category1" value="BeautyExpress">
-		<label for="item">BeautyExpress</label><br>
-    
-        <input type="checkbox" id="item" name="category2" value="CaughtInAct">
-		<label for="item">CaughtInAct</label><br>
-    
-        <input type="checkbox" id="item" name="category3" value="Warriors">
-		<label for="item">Warriors</label><br>
-    
+	
+	 <video controls muted>
+  <source src=/extractedVideo2/joselyncano%20CIEVt8mnLAt001.mp4 type="video/mp4">
  
+Your browser does not support the video tag.
+</video> 
+
+    <!-- <img src="static/joselyncano CIEVt8mnLAt001.mp4" > -->
+ 
+	
+   <input type="hidden" id="custId" name="imgfilename" value="joselyncano CIEVt8mnLAt001.mp4">
+   
+        <input type="checkbox" id="item" name="category0" value="DoThis">
+		<label for="item">DoThis</label><br>
+    
+        <input type="checkbox" id="item" name="category1" value="Sharmili">
+		<label for="item">Sharmili</label><br>
+    
+        <input type="checkbox" id="item" name="category2" value="HayaKeSath">
+		<label for="item">HayaKeSath</label><br>
+    
+        <input type="checkbox" id="item" name="category3" value="Pavitra">
+		<label for="item">Pavitra</label><br>
+    
+        <input type="checkbox" id="item" name="category4" value="randy">
+		<label for="item">randy</label><br>
+    
+        <input type="checkbox" id="item" name="category5" value="Sanskari">
+		<label for="item">Sanskari</label><br>
+    
+        <input type="checkbox" id="item" name="category6" value="Temp">
+		<label for="item">Temp</label><br>
+    
+ <input type="submit" value="nextVideo">
 </form>
 
 </body>
