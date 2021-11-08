@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+	img,video {
+	  max-width: 100%;
+	  height: auto;
+	}
+	label,input[type=checkbox]
+	{
+	  /* Double-sized Checkboxes */
+	  -ms-transform: scale(2); /* IE */
+	  -moz-transform: scale(2); /* FF */
+	  -webkit-transform: scale(2); /* Safari and Chrome */
+	  -o-transform: scale(2); /* Opera */
+	   font-size: 15px;
+	   margin-top: 10px;
+	}
+	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+	<form action={{url_for('noteDownFilename')}}>
+	
+	
+	 <video controls>
+  <source src={{ url_for('static', filename=name) }} type="video/mp4">
+ 
+Your browser does not support the video tag.
+</video> 
+
+    <!-- <img src="static/{{name}}" > -->
+ 
+	
+   <input type="hidden" id="custId" name="imgfilename" value="{{name}}">
+   {% for item in outDirs %}
+        <input type="checkbox" id="item" name="category{{loop.index0}}" value="{{item}}">
+		<label for="item">{{item}}</label><br>
+    {% endfor %}
+ <input type="submit" value="nextVideo">
+</form>
+
+</body>
+</html>

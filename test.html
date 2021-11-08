@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+	img {
+	  max-width: 100%;
+	  height: auto;
+	}
+	label,input[type=checkbox]
+{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  margin-top: 10px;
+}
+	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+	<form action="/noteFilePaths">
+	<button type="submit">
+    <img src="test.jpg" >
+    </button>
+	
+   <input type="hidden" id="custId" name="imgfilename" value="test.jpg">
+   
+        <input type="checkbox" id="item" name="category0" value="Considerable">
+		<label for="item">Considerable</label><br>
+    
+        <input type="checkbox" id="item" name="category1" value="BeautyExpress">
+		<label for="item">BeautyExpress</label><br>
+    
+        <input type="checkbox" id="item" name="category2" value="CaughtInAct">
+		<label for="item">CaughtInAct</label><br>
+    
+        <input type="checkbox" id="item" name="category3" value="Warriors">
+		<label for="item">Warriors</label><br>
+    
+ 
+</form>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+cmd /k python fpicker.py --port 5002
