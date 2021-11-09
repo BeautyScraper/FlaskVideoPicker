@@ -16,10 +16,17 @@
 	   font-size: 15px;
 	   margin-top: 10px;
 	}
+	input[type=submit]
+	{
+		position: fixed;
+		bottom: 0px;
+		right: 0px;
+		height: 10%;
+	}
 	</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{{name}}</title>
 </head>
 <body>
 	<form action={{url_for('noteDownFilename')}}>
@@ -41,6 +48,6 @@ Your browser does not support the video tag.
     {% endfor %}
  <input type="submit" value="nextVideo">
 </form>
-
+<a href="/move">Move Files</a>
 </body>
 </html>

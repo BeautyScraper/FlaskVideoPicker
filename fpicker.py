@@ -7,6 +7,7 @@ import argparse
 import os
 import atexit
 import pandas as pd
+from smartFileMover import moveSmartly
 
 # inputDir = r'D:\paradise\stuff\Images\walls'
 
@@ -96,6 +97,11 @@ def noteDownFilename():
         fp.write(str(dstfp) + '\n')
     return redirect(url_for('main'))
 
+@app.route('/move')
+def MoveFiles():
+    moveSmartly(df)
+    return redirect(url_for('main'))
+    
 def getSourceFilePath(filename):
     tk = filename
     dirName = re.search('(.*) @hudengi (.*) W1t81N (.*)',str(tk))[2]
