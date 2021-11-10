@@ -55,7 +55,7 @@ df.to_csv(mastermovertablefn)
 # with open(cnffile,'r+') as fp:
     # inputDir = random.choice(fp.readlines()).strip()
 inputDirP = Path(inputDir)
-allImages = [x for x in inputDirP.glob('*.mp4')]
+allImages = [x for x in inputDirP.glob('*.mkv')] + [x for x in inputDirP.glob('*.mp4')]
 # random.shuffle(allImages)
 # atexit.register(closingAction)     
 app = Flask(__name__, static_folder=inputDir)
