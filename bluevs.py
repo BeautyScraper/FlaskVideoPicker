@@ -108,6 +108,10 @@ class vsblueprint:
         def MoveFiles():
             moveSmartly(df)
             return redirect(url_for('%s.main' % bpname))
+        @app.route('/randomize')
+        def Randomize():
+            random.shuffle(allImages)
+            return redirect(url_for('%s.main' % bpname))
             
         def getSourceFilePath(filename):
             tk = filename
