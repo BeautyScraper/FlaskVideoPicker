@@ -29,11 +29,11 @@
     <title>{{name}}</title>
 </head>
 <body>
-	<form action={{url_for('config.noteDownFilename')}}>
+	<form action={{url_for(bpname ~ '.noteDownFilename')}}>
 	
 	
 	 <video controls muted>
-  <source src={{ url_for('config.static', filename=name) }} type="video/mp4">
+  <source src={{ url_for(bpname ~ '.static', filename=name) }} type="video/mp4">
  
 Your browser does not support the video tag.
 </video> 
@@ -48,6 +48,6 @@ Your browser does not support the video tag.
     {% endfor %}
  <input type="submit" value="nextVideo">
 </form>
-<a href="/move">Move Files</a>
+<a href={{url_for(bpname ~ '.MoveFiles')}}>Move Files</a>
 </body>
 </html>

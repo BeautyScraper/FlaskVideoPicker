@@ -64,7 +64,8 @@ class vsblueprint:
         allImages = [x for x in inputDirP.glob('*.mkv')] + [x for x in inputDirP.glob('*.mp4')]
         # random.shuffle(allImages)
         # atexit.register(closingAction)     
-        app = simple_page = Blueprint('config', __name__,static_folder=inputDirP)
+        bpname = Path(cnffile).stem
+        app = Blueprint(bpname, __name__,static_folder=inputDirP)
 
         @app.route('/')
         def main():
@@ -72,7 +73,7 @@ class vsblueprint:
                 return 'No images left in the directory'
            imgfp = imageRender()
            cpdir = [Path(x).name for x in cdir]
-           return render_template("template.html", name=imgfp.name, outDirs=cpdir)
+           return render_template("template.html", name=imgfp.name, outDirs=cpdir,bpname=bpname)
            # return 'hello world'
 
         @app.route('/noteFilePaths',methods=['POST', 'GET'])
@@ -101,12 +102,12 @@ class vsblueprint:
             # print(request.args['category1']).
             with open(delPathfn,'a+') as fp:
                 fp.write(str(dstfp) + '\n')
-            return redirect(url_for('config.main'))
+            return redirect(url_for('%s.main' % bpname))
 
         @app.route('/move')
         def MoveFiles():
             moveSmartly(df)
-            return redirect(url_for('config.main'))
+            return redirect(url_for('%s.main' % bpname))
             
         def getSourceFilePath(filename):
             tk = filename
