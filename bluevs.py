@@ -113,6 +113,12 @@ class vsblueprint:
             random.shuffle(allImages)
             return redirect(url_for('%s.main' % bpname))
             
+        @app.route('/reset')
+        def reset():
+            global allImages
+            allImages = [x for x in inputDirP.glob('*.mkv')] + [x for x in inputDirP.glob('*.mp4')]
+            return redirect(url_for('%s.main' % bpname))
+            
         def getSourceFilePath(filename):
             tk = filename
             dirName = re.search('(.*) @hudengi (.*) W1t81N (.*)',str(tk))[2]
