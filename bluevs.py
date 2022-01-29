@@ -117,6 +117,7 @@ class vsblueprint:
         def reset_list():
             # global allImages
             allImages.extend([x for x in inputDirP.glob('*.mp4') if x not in allImages] + [x for x in inputDirP.glob('*.mkv') if x not in allImages])
+            [allImages.remove(x) for x in allImages if not x.is_file()]
             # random.choice(allImages)
             # set(allImages).union(set(tempall))
             # print(allImages)
